@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RXG MODE DESATIVADO */
+#detach-button-host {
+    display: none;
+}
