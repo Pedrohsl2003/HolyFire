@@ -1,40 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import logo from '../assets/favicon.png';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isAboutMenuOpen, setIsAboutMenuOpen] = useState(false);
   const [isContentMenuOpen, setIsContentMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    return () => {
-      clearTimeout(aboutMenuTimeout);
-      clearTimeout(contentMenuTimeout);
-    };
-  }, );
-
-  let aboutMenuTimeout: number;
-  let contentMenuTimeout: number;
+  const aboutMenuTimeoutRef = useRef<number | null>(null);
+  const contentMenuTimeoutRef = useRef<number | null>(null);
 
   const handleMouseEnterAbout = () => {
-    clearTimeout(aboutMenuTimeout);
+    if (aboutMenuTimeoutRef.current) {
+      clearTimeout(aboutMenuTimeoutRef.current);
+    }
     setIsAboutMenuOpen(true);
   };
 
   const handleMouseLeaveAbout = () => {
-    aboutMenuTimeout = setTimeout(() => {
+    aboutMenuTimeoutRef.current = window.setTimeout(() => {
       setIsAboutMenuOpen(false);
     }, 300);
   };
 
   const handleMouseEnterContent = () => {
-    clearTimeout(contentMenuTimeout);
+    if (contentMenuTimeoutRef.current) {
+      clearTimeout(contentMenuTimeoutRef.current);
+    }
     setIsContentMenuOpen(true);
   };
 
   const handleMouseLeaveContent = () => {
-    contentMenuTimeout = setTimeout(() => {
+    contentMenuTimeoutRef.current = window.setTimeout(() => {
       setIsContentMenuOpen(false);
     }, 300);
   };
@@ -43,8 +41,10 @@ const Header: React.FC = () => {
     <header className="bg-black fixed z-10 w-full text-white">
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="flex items-center">
-          <img src={logo} alt="Holyfire Logo" className="h-10 w-10 rounded-full mr-2" />
-          <span className="text-2xl font-semibold">Holyfire</span>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="Holyfire Logo" className="h-10 w-10 rounded-full mr-2" />
+            <span className="text-2xl font-semibold">Holyfire</span>
+          </Link>
         </div>
         <nav className="hidden md:flex space-x-8">
           <NavItem
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
             handleMouseEnter={handleMouseEnterContent}
             handleMouseLeave={handleMouseLeaveContent}
             links={[
-              { label: 'Cultos', href: '#' },
+              { label: 'Cultos', href: '/Cultos' },
               { label: 'Séries', href: '#' },
               { label: 'Treinamentos', href: '#' },
               { label: 'Especiais', href: '#' },
@@ -114,13 +114,15 @@ const NavItem: React.FC<{
       <span className="absolute left-0 bottom-0 w-full h-0.5 bg-orange-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300"></span>
     </button>
     {isMenuOpen && (
-      <div className="absolute mt-4 w-48 bg-black">
+      <div className="absolute mt-2 w-48 bg-black">
         {links.map(link => (
-          <div className="group" key={link.label}>
-            <a href={link.href} className="block px-6 py-2 text-white hover:bg-orange-400 transition duration-300">
-              {link.label}
-            </a>
-          </div>
+          <a
+            href={link.href}
+            key={link.label}
+            className="block px-4 py-2 text-white border-b border-gray-700 hover:bg-orange-400 transition duration-300"
+          >
+            {link.label}
+          </a>
         ))}
       </div>
     )}
@@ -162,7 +164,7 @@ const MobileMenu: React.FC<{
       isOpen={isContentMenuOpen}
       setIsOpen={setIsContentMenuOpen}
       links={[
-        { label: 'Cultos', href: '#' },
+        { label: 'Cultos', href: '/Cultos' },
         { label: 'Séries', href: '#' },
         { label: 'Treinamentos', href: '#' },
         { label: 'Especiais', href: '#' },
@@ -188,13 +190,15 @@ const MobileMenuItem: React.FC<{
       <FaChevronDown className={`ml-2 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
     </button>
     {isOpen && (
-      <div className="bg-black border-t border-gray-700">
+      <div className="bg-black">
         {links.map(link => (
-          <div className="group" key={link.label}>
-            <a href={link.href} className="block px-4 py-2 text-white hover:bg-orange-400 transition duration-300">
-              {link.label}
-            </a>
-          </div>
+          <a
+            href={link.href}
+            key={link.label}
+            className="block px-4 py-2 text-white border-b border-gray-700 hover:bg-orange-400 transition duration-300"
+          >
+            {link.label}
+          </a>
         ))}
       </div>
     )}

@@ -3,7 +3,7 @@ import './styles/global.css'
 import Home from './components/Home'
 import Sobre from './components/Sobre'
 import Agenda from './components/Agenda'
-import Equipe from './routes/Equipe'
+import Equipe from './components/Equipe'
 
 function App() {
 
