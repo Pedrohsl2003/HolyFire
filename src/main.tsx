@@ -9,7 +9,7 @@ import CongressoOnFire from './routes/Eventos/CongressoOnFire.tsx'
 import CultoDeHomens from './routes/Eventos/CultoDeHomens.tsx'
 import Equipe from './components/Equipe.tsx'
 
-import CultosPage from './components/CultosPage.tsx'
+import CultosPage from './routes/Conteudos/Cultos.tsx'
 import { cultos } from './data.ts';
 
 import './styles/global.css'
