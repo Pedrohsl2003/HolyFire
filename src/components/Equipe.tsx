@@ -47,26 +47,26 @@ interface ProfileCardProps {
 }
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => (
-  <div className="flex flex-col items-center p-12">
-    <img className="h-56 w-56 object-cover rounded-2xl mb-8" src={profile.image} alt={profile.name} />
-    <h1 className="text-2xl font-bold mb-2">{profile.name}</h1>
+  <div className="flex flex-col items-center p-6 border border-gray-300 rounded-xl shadow-sm bg-white">
+    <img className="h-48 w-48 object-cover rounded-full border-4 border-blue-500 mb-6" src={profile.image} alt={profile.name} />
+    <h2 className="text-xl font-semibold mb-2 text-gray-800">{profile.name}</h2>
     <p className="text-gray-600 text-center mb-4">{profile.description}</p>
     <div className="flex space-x-4">
       {profile.facebook && (
-        <a href={profile.facebook} className="text-blue-500 hover:text-blue-600">
-          <FaFacebookF className="h-6 w-6" />
+        <a href={profile.facebook} className="text-blue-600 hover:text-blue-700">
+          <FaFacebookF className="h-5 w-5" />
           <span className="sr-only">Facebook</span>
         </a>
       )}
       {profile.instagram && (
-        <a href={profile.instagram} className="text-orange-500 hover:text-orange-600">
-          <FaInstagram className="h-6 w-6" />
+        <a href={profile.instagram} className="text-orange-600 hover:text-orange-700">
+          <FaInstagram className="h-5 w-5" />
           <span className="sr-only">Instagram</span>
         </a>
       )}
       {profile.youtube && (
         <a href={profile.youtube} className="text-red-600 hover:text-red-700">
-          <FaYoutube className="h-6 w-6" />
+          <FaYoutube className="h-5 w-5" />
           <span className="sr-only">YouTube</span>
         </a>
       )}
@@ -76,17 +76,17 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => (
 
 const Equipe: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center p-8">
-      <h1 className="text-4xl font-bold text-blue-500 mb-8">Nossa Equipe Pastoral</h1>
+    <div className="min-h-screen flex flex-col items-center p-8 bg-gray-50">
+      <h1 className="text-4xl font-bold text-blue-600 mb-12">Nossa Equipe Pastoral</h1>
       
       {/* Container para os pastores fundadores */}
-      <div className="w-full max-w-5xl mb-8 bg-white rounded-2xl shadow-lg">
+      <div className="w-full max-w-4xl mb-12 bg-white rounded-2xl shadow-sm">
         <ProfileCard profile={profiles[0]} />
       </div>
       
       {/* Container para os outros pastores */}
-      <div className="w-full max-w-5xl bg-white rounded-2xl p-4 shadow-lg">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="w-full max-w-5xl bg-white rounded-2xl p-6 shadow-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {profiles.slice(1).map((profile, index) => (
             <ProfileCard key={index} profile={profile} />
           ))}
