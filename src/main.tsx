@@ -9,8 +9,8 @@ import CongressoOnFire from './routes/Eventos/CongressoOnFire.tsx'
 import CultoDeHomens from './routes/Eventos/CultoDeHomens.tsx'
 import Equipe from './components/Equipe.tsx'
 
-import CultosPage from './routes/Conteudos/Cultos.tsx'
-import { cultos } from './data.ts';
+import ContentDetalhes from './routes/Conteudos/ContentDetalhes.tsx';
+import ContentPage from './routes/Conteudos/ContentPage.tsx';
 
 import './styles/global.css'
 
@@ -36,8 +36,12 @@ const router = createBrowserRouter([
     element: <Equipe/>
   },
   {
-    path: '/Cultos',
-    element: <CultosPage cultos={cultos} />, 
+    path: '/content/:type',
+    element: <ContentPage />,
+  },
+  { 
+    path: '/content/:type/:id', 
+    element: <ContentDetalhes /> 
   },
 ])
 

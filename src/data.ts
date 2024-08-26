@@ -1,21 +1,38 @@
-export const cultos = [
+export interface ItemConteudo {
+  id: string;
+  imagemCard: string;
+  imagemBanner: string;
+  tema: string;
+  resumo: string;
+  local?: string;
+  horario?: string;
+  ministrante?: string;
+  data: string; 
+}
+
+export const cultos: ItemConteudo[] = [
   {
     id: '1',
-    imagem: '/src/assets/CongressoOnFire.jpeg',
-    tema: 'Conf On Fire',
-    data: '2024-08-21', // Mantenha no formato ISO
+    imagemCard: '../src/assets/CongressoOnFire.jpeg',
+    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    tema: 'Tema do Culto 1',
+    resumo: 'Resumo do Culto 1',
+    local: 'Local do Culto 1',
+    horario: 'Horário do Culto 1',
+    ministrante: 'Ministrante do Culto 1',
+    data: '2024-08-26',
   },
-  {
-    id: '2',
-    imagem: '/src/assets/CultoDeHomens.jpeg',
-    tema: 'Culto de Homens',
-    data: '2024-08-22',
-  },
-  {
-    id: '3',
-    imagem: '/src/assets/ImersaoCasais.jpeg',
-    tema: 'Imersao de Casais',
-    data: '2024-08-20',
-  },
-  // Adicione mais cultos conforme necessário
+  // Outros cultos...
+];
+
+export const series: ItemConteudo[] = [
+  // Dados das séries...
+];
+
+export const treinamentos: ItemConteudo[] = [
+  // Dados dos treinamentos...
+];
+
+export const especiais: ItemConteudo[] = [
+  // Dados dos especiais...
 ];

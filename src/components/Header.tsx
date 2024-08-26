@@ -65,10 +65,10 @@ const Header: React.FC = () => {
             handleMouseEnter={handleMouseEnterContent}
             handleMouseLeave={handleMouseLeaveContent}
             links={[
-              { label: 'Cultos', href: '/Cultos' },
-              { label: 'Séries', href: '#' },
-              { label: 'Treinamentos', href: '#' },
-              { label: 'Especiais', href: '#' },
+              { label: 'Cultos', href: '/content/cultos' },
+              { label: 'Séries', href: '/content/series' },
+              { label: 'Treinamentos', href: '/content/treinamentos' },
+              { label: 'Especiais', href: '/content/especiais' },
             ]}
           />
           <NavLink href="#" label="Contribua" />
@@ -164,10 +164,10 @@ const MobileMenu: React.FC<{
       isOpen={isContentMenuOpen}
       setIsOpen={setIsContentMenuOpen}
       links={[
-        { label: 'Cultos', href: '/Cultos' },
-        { label: 'Séries', href: '#' },
-        { label: 'Treinamentos', href: '#' },
-        { label: 'Especiais', href: '#' },
+        { label: 'Cultos', href: '/content/cultos' },
+        { label: 'Séries', href: '/content/series' },
+        { label: 'Treinamentos', href: '/content/treinamentos' },
+        { label: 'Especiais', href: '/content/especiais' },
       ]}
     />
     <MobileNavLink href="#" label="Contribua" />
