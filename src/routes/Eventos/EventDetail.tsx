@@ -1,35 +1,54 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { eventos, ItemConteudo } from '../../data';
 import Header from '../../components/Header';
 
-const ImersaoDeCasais: React.FC = () => {
+const EventDetail: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const evento = eventos.find((e: ItemConteudo) => e.id === id);
+
+  if (!evento) return <div>Evento não encontrado</div>;
+
   return (
     <div className="min-h-screen">
       <Header />
+
       <div className="flex justify-center items-center w-full h-auto">
         <img
-          src="https://via.placeholder.com/1080x608"
-          alt="Imagem do Evento"
+          src={evento.imagemBanner}
+          alt={`Imagem do Evento ${evento.tema}`}
           className="mt-24 object-cover shadow-lg sm:rounded-xl"
         />
       </div>
-      <h1 className="text-4xl font-bold my-12 text-center">Imersão de Casais</h1>
+
+      <h1 className="text-4xl font-bold my-12 text-center">{evento.tema}</h1>
+
       <div className="flex justify-center">
         <div className="bg-white p-8 sm:rounded-lg shadow-lg max-w-5xl w-full">
-          <h2 className="text-3xl font-semibold mb-4">O que é a Imersão de Casais?</h2>
-          <p className="mb-6 text-lg text-gray-700">
-            A Imersão de Casais é um evento especial organizado pela nossa igreja, projetado para fortalecer
-            relacionamentos e promover a união entre casais. Durante este encontro, os participantes terão a
-            oportunidade de participar de ministrações inspiradoras, workshops práticos, e diversas atividades que
-            visam enriquecer a vida conjugal.
-          </p>
-          <h3 className="text-2xl font-semibold mb-4">O que está incluso na inscrição?</h3>
-          <ul className="list-disc list-inside mb-6 text-lg text-gray-700">
-            <li>Hospedagem completa em um ambiente acolhedor</li>
-            <li>Refeições deliciosas, preparadas com carinho</li>
-            <li>Atividades interativas e palestras enriquecedoras</li>
-            <li>Materiais de apoio para auxiliar no crescimento conjugal</li>
-            <li>Sessões de sorteios com prêmios especiais para os participantes</li>
-          </ul>
+          <h2 className="text-3xl font-semibold mb-4">Sobre o Evento</h2>
+          <p className="mb-6 text-lg text-gray-700">{evento.resumo}</p>
+          
+          {evento.local && (
+            <>
+              <h3 className="text-2xl font-semibold mb-4">Local</h3>
+              <p className="mb-6 text-lg text-gray-700">{evento.local}</p>
+            </>
+          )}
+          
+          {evento.horario && (
+            <>
+              <h3 className="text-2xl font-semibold mb-4">Horário</h3>
+              <p className="mb-6 text-lg text-gray-700">{evento.horario}</p>
+            </>
+          )}
+
+          {evento.ministrante && (
+            <>
+              <h3 className="text-2xl font-semibold mb-4">Ministrante</h3>
+              <p className="mb-6 text-lg text-gray-700">{evento.ministrante}</p>
+            </>
+          )}
+
           <div className="text-center">
             <a
               href="https://home.e-inscricao.com/"
@@ -42,13 +61,13 @@ const ImersaoDeCasais: React.FC = () => {
           </div>
         </div>
       </div>
+
       {/* Container do Mapa */}
       <div className="flex justify-center my-16">
         <div className="bg-white sm:p-8 py-12 sm:rounded-lg shadow-lg max-w-5xl w-full">
-          {/* Adicionado `sm:p-8 p-0` para aplicar padding em telas maiores e nenhum padding em telas menores */}
           <h2 className="text-2xl font-semibold mb-4 text-center">Local do Evento</h2>
           <p className="mb-6 text-lg text-gray-700 text-center">
-            <strong>Local:</strong> R. Guiomar Novaes, 189 - Jaraguá
+            <strong>Local:</strong> {evento.local}
           </p>
           <div className="overflow-hidden" style={{ aspectRatio: '16/9' }}>
             <iframe
@@ -58,13 +77,13 @@ const ImersaoDeCasais: React.FC = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Localização da Igreja"
+              title="Localização do Evento"
             ></iframe>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default ImersaoDeCasais;
+export default EventDetail;
