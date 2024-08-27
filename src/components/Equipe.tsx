@@ -47,7 +47,7 @@ interface ProfileCardProps {
 }
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => (
-  <div className="flex flex-col items-center p-6 border border-gray-300 rounded-xl shadow-sm bg-white">
+  <div className="flex flex-col items-center p-6 border border-gray-300 rounded-xl shadow-sm">
     <img className="h-48 w-48 object-cover rounded-full border-4 border-blue-500 mb-6" src={profile.image} alt={profile.name} />
     <h2 className="text-xl font-semibold mb-2 text-gray-800">{profile.name}</h2>
     <p className="text-gray-600 text-center mb-4">{profile.description}</p>

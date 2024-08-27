@@ -8,7 +8,7 @@ import Equipe from './components/Equipe'
 function App() {
 
   return (
-    <div> 
+    <div className='bg-gray-50 text-black'> 
       <Home />
       <Sobre />
       <Agenda />
