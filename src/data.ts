@@ -14,7 +14,7 @@ export const eventos: ItemConteudo[] = [
   {
     id: '1',
     imagemCard: '../src/assets/CongressoOnFire.jpeg',
-    imagemBanner: 'https://via.placeholder.com/1080x608?text=Congresso+OnFire',
+    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
     tema: 'Congresso OnFire',
     resumo: 'Resumo do Congresso OnFire',
     local: 'Local do Congresso OnFire',
@@ -24,8 +24,8 @@ export const eventos: ItemConteudo[] = [
   },
   {
     id: '2',
-    imagemCard: 'https://via.placeholder.com/300x200?text=Imersao+De+Casais',
-    imagemBanner: 'https://via.placeholder.com/1080x608?text=Imersao+De+Casais',
+    imagemCard: '../src/assets/ImersaoCasais.jpeg',
+    imagemBanner: '../src/assets/ImersaoCasais.jpeg',
     tema: 'Imersão De Casais',
     resumo: 'Resumo da Imersão De Casais',
     local: 'Local da Imersão De Casais',
@@ -35,8 +35,8 @@ export const eventos: ItemConteudo[] = [
   },
   {
     id: '3',
-    imagemCard: 'https://via.placeholder.com/300x200?text=Culto+De+Homens',
-    imagemBanner: 'https://via.placeholder.com/1080x608?text=Culto+De+Homens',
+    imagemCard: '../src/assets/CultoDeHomens.jpeg',
+    imagemBanner: '../src/assets/CultoDeHomens.jpeg',
     tema: 'Culto De Homens',
     resumo: 'Resumo do Culto De Homens',
     local: 'Local do Culto De Homens',
@@ -48,27 +48,71 @@ export const eventos: ItemConteudo[] = [
 ];
 
 export const cultos: ItemConteudo[] = [
-  // Dados dos cultos...
+  {
+    id: '1',
+    imagemCard: '../src/assets/CongressoOnFire.jpeg',
+    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    tema: 'Culto de Exemplo 1',
+    resumo: 'Resumo do Culto de Exemplo 1',
+    local: 'Local do Culto de Exemplo 1',
+    horario: 'Horário do Culto de Exemplo 1',
+    ministrante: 'Ministrante do Culto de Exemplo 1',
+    data: '2024-10-01',
+  },
+  // Outros cultos...
 ];
 
 export const series: ItemConteudo[] = [
-  // Dados das séries...
+  {
+    id: '1',
+    imagemCard: '../src/assets/CongressoOnFire.jpeg',
+    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    tema: 'Série de Exemplo 1',
+    resumo: 'Resumo da Série de Exemplo 1',
+    local: 'Local da Série de Exemplo 1',
+    horario: 'Horário da Série de Exemplo 1',
+    ministrante: 'Ministrante da Série de Exemplo 1',
+    data: '2024-11-01',
+  },
+  // Outras séries...
 ];
 
 export const treinamentos: ItemConteudo[] = [
-  // Dados dos treinamentos...
+  {
+    id: '1',
+    imagemCard: '../src/assets/CongressoOnFire.jpeg',
+    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    tema: 'Treinamento de Exemplo 1',
+    resumo: 'Resumo do Treinamento de Exemplo 1',
+    local: 'Local do Treinamento de Exemplo 1',
+    horario: 'Horário do Treinamento de Exemplo 1',
+    ministrante: 'Ministrante do Treinamento de Exemplo 1',
+    data: '2024-12-01',
+  },
+  // Outros treinamentos...
 ];
 
 export const especiais: ItemConteudo[] = [
-  // Dados dos especiais...
+  {
+    id: '1',
+    imagemCard: '../src/assets/CongressoOnFire.jpeg',
+    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    tema: 'Especial de Exemplo 1',
+    resumo: 'Resumo do Especial de Exemplo 1',
+    local: 'Local do Especial de Exemplo 1',
+    horario: 'Horário do Especial de Exemplo 1',
+    ministrante: 'Ministrante do Especial de Exemplo 1',
+    data: '2024-12-15',
+  },
+  // Outros especiais...
 ];
 
 // Programação Semanal
-export const weeklySchedule: { [key: string]: string } = {
-  'Terça Feira': 'TADEL - 20h30',
-  'Sábado - Manhã': '09h00 Escola de Líderes',
-  'Quarta Feira': '20h00 - Célula',
-  'Sábado - Noite': 'Célula de Jovens - 19h00',
-  'Quinta Feira': '20h00 Escola do Espírito',
-  'Domingo': '09h00, 17h00, 19h00 - Culto de Celebração',
+export const semanal: { [key: string]: string } = {
+  'TADEL': 'Terça Feira - 20h30',
+  'Escola de Líderes': 'Sábado - 09h00 ',
+  'Célula': 'Quarta Feira - 20h00',
+  'Célula de Jovens': 'Sábado - 19h00',
+  'Escola do Espírito': 'Quinta Feira - 20h00 ',
+  'Culto de Celebração': 'Domingo - 09h00, 17h00, 19h00',
 };

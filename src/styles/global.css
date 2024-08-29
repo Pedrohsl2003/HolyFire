@@ -2,8 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-  img {
-    display: block; /* Garante que as imagens sejam tratadas como blocos */
-    max-width: 100%; /* Impede que as imagens sejam maiores do que seu contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+  background-color: #f2f2f2; 
+  color: #000; 
+  font-family: Arial, sans-serif; 
+  line-height: 1.6; 
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; 
+}
+
+img {
+  display: block; 
+  max-width: 100%; 
+  height: auto; 
+}
+

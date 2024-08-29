@@ -6,6 +6,8 @@ import EventDetail from './routes/Eventos/EventDetail.tsx';
 import Equipe from './components/Equipe.tsx';
 import ContentDetalhes from './routes/Conteudos/ContentDetalhes.tsx';
 import ContentPage from './routes/Conteudos/ContentPage.tsx';
+import QuemSomos from './components/Sobre.tsx'
+import NossaEquipe from './components/Equipe.tsx'
 import './styles/global.css';
 
 const router = createBrowserRouter([
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
     path: '/content/:type/:id',
     element: <ContentDetalhes />,
   },
+  {
+    path: '/quem-somos',
+    element: <QuemSomos />,
+  },
+  {
+    path: '/nossa-equipe',
+    element: <NossaEquipe />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

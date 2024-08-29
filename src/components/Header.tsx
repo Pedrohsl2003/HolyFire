@@ -53,8 +53,8 @@ const Header: React.FC = () => {
             handleMouseEnter={handleMouseEnterAbout}
             handleMouseLeave={handleMouseLeaveAbout}
             links={[
-              { label: 'Quem Somos', href: '#' },
-              { label: 'Nossa Equipe', href: '#' },
+              { label: 'Quem Somos', href: '/quem-somos' },
+              { label: 'Nossa Equipe', href: '/nossa-equipe' },
               { label: 'Células', href: '#' },
             ]}
           />
@@ -153,8 +153,8 @@ const MobileMenu: React.FC<{
       isOpen={isAboutMenuOpen}
       setIsOpen={setIsAboutMenuOpen}
       links={[
-        { label: 'Quem Somos', href: '#' },
-        { label: 'Nossa Equipe', href: '#' },
+        { label: 'Quem Somos', href: '/quem-somos' },
+        { label: 'Nossa Equipe', href: '/nossa-equipe' },
         { label: 'Células', href: '#' },
       ]}
     />

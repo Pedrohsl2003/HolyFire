@@ -1,18 +1,17 @@
 import './styles/global.css'
 
 import Home from './components/Home'
-import Sobre from './components/Sobre'
-import Agenda from './components/Agenda'
-import Equipe from './components/Equipe'
+import Eventos from './components/Eventos'
+import Semanal from './components/Semanal'
+
 
 function App() {
 
   return (
-    <div className='bg-gray-50 text-black'> 
+    <div className=''> 
       <Home />
-      <Sobre />
-      <Agenda />
-      <Equipe />
+      <Eventos />
+      <Semanal />
     </div>
   )
 }
