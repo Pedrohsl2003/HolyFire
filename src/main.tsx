@@ -8,6 +8,7 @@ import ContentDetalhes from './routes/Conteudos/ContentDetalhes.tsx';
 import ContentPage from './routes/Conteudos/ContentPage.tsx';
 import QuemSomos from './components/Sobre.tsx'
 import NossaEquipe from './components/Equipe.tsx'
+import Celulas from './routes/Sobre/Celulas.tsx'
 import './styles/global.css';
 
 const router = createBrowserRouter([
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
   {
     path: '/nossa-equipe',
     element: <NossaEquipe />
-  }
+  },
+  {
+    path: '/celulas',
+    element: <Celulas />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

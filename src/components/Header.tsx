@@ -55,7 +55,7 @@ const Header: React.FC = () => {
             links={[
               { label: 'Quem Somos', href: '/quem-somos' },
               { label: 'Nossa Equipe', href: '/nossa-equipe' },
-              { label: 'Células', href: '#' },
+              { label: 'Células', href: '/celulas' },
             ]}
           />
           <NavLink href="#" label="Agenda" />
@@ -155,7 +155,7 @@ const MobileMenu: React.FC<{
       links={[
         { label: 'Quem Somos', href: '/quem-somos' },
         { label: 'Nossa Equipe', href: '/nossa-equipe' },
-        { label: 'Células', href: '#' },
+        { label: 'Células', href: '/celulas' },
       ]}
     />
     <MobileNavLink href="#" label="Agenda" />
