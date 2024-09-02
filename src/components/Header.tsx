@@ -58,7 +58,7 @@ const Header: React.FC = () => {
               { label: 'Células', href: '/celulas' },
             ]}
           />
-          <NavLink href="#" label="Agenda" />
+          <NavLink href="/agenda" label="Agenda" />
           <NavItem
             label="Conteúdo"
             isMenuOpen={isContentMenuOpen}
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
               { label: 'Especiais', href: '/content/especiais' },
             ]}
           />
-          <NavLink href="#" label="Contribua" />
+          <NavLink href="/contribua" label="Contribua" />
           <NavLink href="#" label="Contato" />
         </nav>
         <button
@@ -158,7 +158,7 @@ const MobileMenu: React.FC<{
         { label: 'Células', href: '/celulas' },
       ]}
     />
-    <MobileNavLink href="#" label="Agenda" />
+    <MobileNavLink href="/agenda" label="Agenda" />
     <MobileMenuItem
       label="Conteúdo"
       isOpen={isContentMenuOpen}
@@ -170,7 +170,7 @@ const MobileMenu: React.FC<{
         { label: 'Especiais', href: '/content/especiais' },
       ]}
     />
-    <MobileNavLink href="#" label="Contribua" />
+    <MobileNavLink href="/contribua" label="Contribua" />
     <MobileNavLink href="#" label="Contato" />
   </div>
 );

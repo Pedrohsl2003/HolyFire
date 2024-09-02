@@ -32,7 +32,7 @@ const MDAComponent: React.FC = () => {
   };
 
   return (
-    <div className="font-sans">
+    <div className="font-sans pb-8">
       <div className="relative w-full h-96">
         <img
           src={CongressoOnFire}
@@ -46,7 +46,7 @@ const MDAComponent: React.FC = () => {
       </div>
 
       {/* Cartão de Texto */}
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden mt-8 p-8">
+      <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden mt-8 p-8">
         <div className="flex flex-col md:flex-row items-start">
           <div className="flex-1">
             <p className="mb-6 text-gray-800 text-lg leading-relaxed">
@@ -59,7 +59,7 @@ const MDAComponent: React.FC = () => {
               A Célula — é a Igreja no Lar. Um lugar de pastoreio, de grandes amizades, de estudo da Palavra de Deus e de oração intensa. Um ambiente cheio de fé, alegria e muito amor.
             </p>
             <p className="mb-6 text-gray-800 text-lg leading-relaxed">
-              Na <a href="https://www.visaomda.com/" className="text-blue-600 font-semibold hover:underline">Visão do MDA</a> cada cristão compromissado deve estar sendo e fazendo discípulos, participar de uma Célula, abraçar a visão da Igreja Local, buscar a Unidade da Igreja Mundial e colocar em primeiro lugar o Reino de Deus.
+              Na <a href="https://www.visaomda.com/" className="text-blue-600 font-semibold hover:text-blue-700">Visão do MDA</a> cada cristão compromissado deve estar sendo e fazendo discípulos, participar de uma Célula, abraçar a visão da Igreja Local, buscar a Unidade da Igreja Mundial e colocar em primeiro lugar o Reino de Deus.
             </p>
             
             {/* Barra horizontal */}
@@ -67,7 +67,7 @@ const MDAComponent: React.FC = () => {
 
             <a
               href="https://www.visaomda.com/"
-              className="block text-blue-600 font-semibold text-lg hover:underline"
+              className="block text-blue-600 font-semibold text-lg hover:text-blue-700"
             >
               - Saiba mais sobre a Visão do MDA
             </a>
@@ -75,56 +75,58 @@ const MDAComponent: React.FC = () => {
           
           {/* Imagem MDA */}
           <div className="flex-shrink-0 mt-6 md:mt-0 md:ml-6">
-            <img src={IconMDA} alt="MDA" className="w-48 mx-auto" />
+            <img src={IconMDA} alt="MDA" className="w-52 mx-auto" />
           </div>
         </div>
       </div>
 
       {/* Cartão de Formulário */}
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden mt-8 p-8">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800">Faça parte de uma Célula</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="max-w-5xl mx-auto bg-gradient-to-tl from-sky-300 to-cyan-300 rounded-lg shadow-lg overflow-hidden my-8 p-12">
+        <h2 className="text-4xl font-extrabold mb-8 text-gray-900 text-center">
+          Faça parte de uma Célula
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Nome Completo</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Nome Completo</label>
               <input
                 type="text"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Email</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Email</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Idade</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Idade</label>
               <input
                 type="number"
                 name="age"
                 value={formData.age}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Sexo</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Sexo</label>
               <select
                 name="gender"
                 value={formData.gender}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               >
                 <option value="">Selecione</option>
@@ -134,12 +136,12 @@ const MDAComponent: React.FC = () => {
               </select>
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Est. Civil</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Est. Civil</label>
               <select
                 name="maritalStatus"
                 value={formData.maritalStatus}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               >
                 <option value="">Selecione</option>
@@ -150,67 +152,67 @@ const MDAComponent: React.FC = () => {
               </select>
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Endereço</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Endereço</label>
               <input
                 type="text"
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Bairro</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Bairro</label>
               <input
                 type="text"
                 name="neighborhood"
                 value={formData.neighborhood}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">CEP</label>
+              <label className="block text-gray-800 mb-2 font-semibold">CEP</label>
               <input
                 type="text"
                 name="postalCode"
                 value={formData.postalCode}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Fone/Whatsapp</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Fone/Whatsapp</label>
               <input
                 type="text"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">Cidade/Estado</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Cidade/Estado</label>
               <input
                 type="text"
                 name="cityState"
                 value={formData.cityState}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-gray-700 mb-2 font-medium">Melhor dia para você participar?</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Melhor dia para você participar?</label>
               <select
                 name="preferredDay"
                 value={formData.preferredDay}
                 onChange={handleChange}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
                 required
               >
                 <option value="">Selecione</option>
@@ -220,19 +222,19 @@ const MDAComponent: React.FC = () => {
               </select>
             </div>
             <div className="md:col-span-2">
-              <label className="block text-gray-700 mb-2 font-medium">Observação (Opcional)</label>
+              <label className="block text-gray-800 mb-2 font-semibold">Observação (Opcional)</label>
               <textarea
                 name="observation"
                 value={formData.observation}
                 onChange={handleChange}
                 rows={4}
-                className="w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="w-full border-gray-300 rounded-lg shadow-sm p-3 focus:outline-none focus:ring-2"
               />
             </div>
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 px-6 rounded-md shadow-sm hover:bg-blue-700 mt-6"
+            className="w-full bg-gradient-to-tl from-indigo-400 to-sky-400 text-white py-3 px-6 rounded-lg shadow-lg hover:from-indigo-500 hover:to-sky-500 focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150 mt-8"
           >
             Enviar
           </button>

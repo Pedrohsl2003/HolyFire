@@ -116,3 +116,44 @@ export const semanal: { [key: string]: string } = {
   'Escola do Espírito': 'Quinta Feira - 20h00 ',
   'Culto de Celebração': 'Domingo - 09h00, 17h00, 19h00',
 };
+
+export interface Profile {
+  name: string;
+  image: string;
+  description: string;
+  facebook?: string;
+  instagram?: string;
+  youtube?: string;
+}
+
+export const profiles: Profile[] = [
+  {
+    name: 'Ataíde & Cida',
+    image: 'https://via.placeholder.com/500x500',
+    description: 'Pastores Fundadores',
+    facebook: '/',
+    instagram: '/',
+    youtube: '/',
+  },
+  {
+    name: 'Gustavo & Renata',
+    image: 'https://via.placeholder.com/500x500',
+    description: 'Pastores de Casais',
+    facebook: '/',
+    instagram: '/',
+  },
+  {
+    name: 'Nelci',
+    image: 'https://via.placeholder.com/500x500',
+    description: 'Pastora',
+    facebook: '/',
+    instagram: '/',
+  },
+  {
+    name: 'Denis & Daiane',
+    image: 'https://via.placeholder.com/500x500',
+    description: 'Pastores de Jovens',
+    facebook: '/',
+    instagram: '/',
+  },
+];  

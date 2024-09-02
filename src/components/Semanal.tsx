@@ -23,7 +23,7 @@ const Semanal: React.FC = () => {
                     <div className="flex-1 flex flex-col items-end pr-6 mb-6 md:mb-0">
                         {leftDays.map(([day, schedule], index) => (
                             <div key={index} className="mb-6 w-full max-w-sm p-6 bg-white shadow-md rounded-lg hover:shadow-xl transition-shadow duration-300">
-                                <p className="text-2xl font-bold text-gray-900">{day}</p>
+                                <p className="text-2xl font-bold text-indigo-400">{day}</p>
                                 <p className="text-gray-700 mt-2">{schedule}</p>
                             </div>
                         ))}
@@ -34,7 +34,7 @@ const Semanal: React.FC = () => {
                     <div className="flex-1 flex flex-col items-start pl-6 mb-6 md:mb-0">
                         {rightDays.map(([day, schedule], index) => (
                             <div key={index} className="mb-6 w-full max-w-sm p-6 bg-white shadow-md rounded-lg hover:shadow-xl transition-shadow duration-300">
-                                <p className="text-2xl font-bold text-gray-900">{day}</p>
+                                <p className="text-2xl font-bold text-indigo-400">{day}</p>
                                 <p className="text-gray-700 mt-2">{schedule}</p>
                             </div>
                         ))}

@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.tsx';
 import EventDetail from './routes/Eventos/EventDetail.tsx';
-import Equipe from './components/Equipe.tsx';
+import Equipe from './routes/Sobre/NossaEquipe.tsx';
 import ContentDetalhes from './routes/Conteudos/ContentDetalhes.tsx';
 import ContentPage from './routes/Conteudos/ContentPage.tsx';
-import QuemSomos from './components/Sobre.tsx'
-import NossaEquipe from './components/Equipe.tsx'
+import QuemSomos from './routes/Sobre/QuemSomos.tsx'
+import NossaEquipe from './routes/Sobre/NossaEquipe.tsx'
 import Celulas from './routes/Sobre/Celulas.tsx'
+import Agenda from './routes/Agenda/Agenda.tsx'
+import Contribua from './routes/Contribua/Contribua.tsx'
 import './styles/global.css';
 
 const router = createBrowserRouter([
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
     path: '/celulas',
     element: <Celulas />
   },
+  {
+    path: '/agenda',
+    element: <Agenda />
+  },
+  {
+    path: '/contribua',
+    element: <Contribua />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

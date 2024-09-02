@@ -1,9 +1,9 @@
 import './styles/global.css'
 
 import Home from './components/Home'
-import Info from './components/Info'
+import Sobre from './components/Sobre'
 import Eventos from './components/Eventos'
-import BannerContribuir from './components/BannerContribuir'
+import BannerContribuir from './components/IgrejaGenerosa'
 import Semanal from './components/Semanal'
 
 
@@ -12,7 +12,7 @@ function App() {
   return (
     <div> 
       <Home />
-      <Info />
+      <Sobre />
       <Eventos />
       <BannerContribuir />
       <Semanal />

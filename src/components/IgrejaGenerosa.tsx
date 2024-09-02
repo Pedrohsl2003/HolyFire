@@ -1,4 +1,4 @@
-const BannerContribuir = () => {
+const IgrejaGenerosa = () => {
     return (
       <div className="bg-indigo-500 p-16 text-center mt-12 text-white shadow-lg">
         <div className="max-w-2xl mx-auto">
@@ -18,4 +18,4 @@ const BannerContribuir = () => {
     );
   };
   
-  export default BannerContribuir;  
+  export default IgrejaGenerosa;  
