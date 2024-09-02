@@ -84,7 +84,7 @@ const Sobre = () => {
               </a>
             </li>
             <li className="cursor-pointer text-base flex items-center hover:text-blue-500 transition-colors duration-300">
-              <a href="/" className="flex items-center space-x-2">
+              <a href="/contribua" className="flex items-center space-x-2">
                 <FaCheckCircleRegular className="text-2xl mr-2" /> 
                 <span>Contribua</span>
               </a>
