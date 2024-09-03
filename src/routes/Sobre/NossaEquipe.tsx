@@ -19,7 +19,7 @@ const NossaEquipe: React.FC = () => {
       </div>
 
       {/* Cards Pastores */}
-      <div className="container mx-auto py-8 max-w-7xl grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto py-8 max-w-8xl grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         {profiles.map((profile, index) => (
           <div
             key={index}
