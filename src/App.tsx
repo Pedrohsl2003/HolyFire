@@ -3,7 +3,7 @@ import './styles/global.css'
 import Home from './components/Home'
 import Sobre from './components/Sobre'
 import Eventos from './components/Eventos'
-import BannerContribuir from './components/IgrejaGenerosa'
+import Contribuir from './components/Generosa'
 import Semanal from './components/Semanal'
 
 
@@ -14,7 +14,7 @@ function App() {
       <Home />
       <Sobre />
       <Eventos />
-      <BannerContribuir />
+      <Contribuir />
       <Semanal />
     </div>
   )

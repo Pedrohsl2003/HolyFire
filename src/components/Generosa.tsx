@@ -8,7 +8,7 @@ const IgrejaGenerosa = () => {
             Saiba mais sobre as formas de contribuir clicando no botão abaixo.
           </p>
           <a 
-            href="/contribur" 
+            href="/contribua" 
             className="bg-white text-indigo-500 py-3 px-6 rounded-lg font-semibold shadow-md transition-transform transform hover:scale-105"
           >
             Contribuir

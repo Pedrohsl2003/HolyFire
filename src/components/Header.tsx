@@ -71,6 +71,7 @@ const Header: React.FC = () => {
               { label: 'Quem Somos', href: '/quem-somos' },
               { label: 'Nossa Equipe', href: '/nossa-equipe' },
               { label: 'Células', href: '/celulas' },
+              { label: 'Nossa Sede', href: '/nossa-sede' }, 
             ]}
           />
           <NavLink href="/agenda" label="Agenda" />
@@ -188,6 +189,7 @@ const MobileMenu: React.FC<{
         { label: 'Quem Somos', href: '/quem-somos' },
         { label: 'Nossa Equipe', href: '/nossa-equipe' },
         { label: 'Células', href: '/celulas' },
+        { label: 'Nossa Sede', href: '/nossa-sede' }, 
       ]}
     />
     <MobileNavLink href="/agenda" label="Agenda" />
@@ -223,19 +225,19 @@ const MobileMenuItem: React.FC<{
 }> = ({ label, isOpen, setIsOpen, links }) => (
   <div className="relative border-t border-gray-700">
     <button
-      className="w-full flex justify-between items-center p-4 text-white hover:bg-gray-800 transition duration-300"
       onClick={() => setIsOpen(!isOpen)}
+      className="flex justify-between w-full text-left px-4 py-2 text-white hover:bg-orange-400 transition duration-300"
     >
       {label}
-      <FaChevronDown className={`ml-2 transform transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
+      <FaChevronDown className={`ml-2 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
     </button>
     {isOpen && (
-      <div className="bg-gray-900">
+      <div className="bg-black">
         {links.map(link => (
           <a
             href={link.href}
             key={link.label}
-            className="block px-6 py-3 text-white hover:bg-gray-800 transition duration-300"
+            className="block px-4 py-2 text-white border-b border-gray-700 hover:bg-orange-400 transition duration-300"
           >
             {link.label}
           </a>
@@ -246,12 +248,9 @@ const MobileMenuItem: React.FC<{
 );
 
 const MobileNavLink: React.FC<{ href: string, label: string }> = ({ href, label }) => (
-  <a
-    href={href}
-    className="block border-t border-gray-700 p-4 text-white hover:bg-gray-800 transition duration-300"
-  >
-    {label}
-  </a>
+  <div className="border-t border-gray-700">
+    <a href={href} className="block px-4 py-2 text-white hover:bg-orange-400 transition duration-300">{label}</a>
+  </div>
 );
 
 export default Header;

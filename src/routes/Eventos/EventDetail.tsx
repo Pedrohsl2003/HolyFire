@@ -10,20 +10,22 @@ const EventDetail: React.FC = () => {
   if (!evento) return <div>Evento não encontrado</div>;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-2">
       <Header />
 
-      <div className="flex justify-center items-center w-full h-auto">
+      <div className="relative w-full h-96">
         <img
           src={evento.imagemBanner}
           alt={`Imagem do Evento ${evento.tema}`}
-          className="mt-24 object-cover shadow-lg sm:rounded-xl"
+          className="absolute inset-0 w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 flex justify-center items-center">
+          <h1 className="text-4xl font-bold text-white z-10 text-center">{evento.tema}</h1>
+        </div>
       </div>
 
-      <h1 className="text-4xl font-bold my-12 text-center">{evento.tema}</h1>
-
-      <div className="flex justify-center">
+      <div className="flex justify-center p-8">
         <div className="bg-white p-8 sm:rounded-lg shadow-lg max-w-5xl w-full">
           <h2 className="text-3xl font-semibold mb-4">Sobre o Evento</h2>
           <p className="mb-6 text-lg text-gray-700">{evento.resumo}</p>

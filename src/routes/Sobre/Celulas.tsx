@@ -32,7 +32,7 @@ const MDAComponent: React.FC = () => {
   };
 
   return (
-    <div className="font-sans pb-8">
+    <div>
       <div className="relative w-full h-96">
         <img
           src={CongressoOnFire}

@@ -1,10 +1,8 @@
 import React from 'react';
-import Header from './Header';
 
 const Home: React.FC = () => {
   return (
-    <div className="relative h-screen overflow-hidden">
-      <Header />
+    <div className="min-h-screen">
       <div className="absolute inset-0 mt-16 flex items-center justify-center">
         <video
           autoPlay

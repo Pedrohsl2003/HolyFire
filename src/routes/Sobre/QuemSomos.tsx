@@ -4,6 +4,7 @@ import BannerImage from '../../assets/CongressoOnFire.jpeg';
 
 const QuemSomos: React.FC = () => {
   return (
+  <div>
     <div className="relative w-full h-96">
         <img
           src={BannerImage}
@@ -82,9 +83,9 @@ const QuemSomos: React.FC = () => {
             <li>Serviço e Impacto Comunitário</li>
           </ul>
         </div>
-
       </div>
     </div>
+  </div>
   );
 };
 

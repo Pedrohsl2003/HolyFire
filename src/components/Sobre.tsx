@@ -7,7 +7,7 @@ const Sobre = () => {
       {/* Card Topo */}
       <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-white p-4 md:p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center">
         {/* Seção de Texto */}
-        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="flex-1 flex flex-col items-center text-center md:text-left">
           <h2 className="text-sm md:text-base font-thin text-gray-800">Culto de Celebração</h2>
           <p className="font-medium text-base md:text-lg text-gray-700 mt-2">
             Domingo: <a className='font-bold'>09h00 - 17h00 - 19h00</a>
@@ -31,7 +31,7 @@ const Sobre = () => {
 
       {/* Cards Retangulo */}
       <div className="space-y-3 col-span-1 md:col-span-2">
-        <a href="/" className="bg-white p-4 rounded-lg shadow-lg flex items-center hover:shadow-xl transition-shadow duration-300">
+        <a href="/nossa-sede" className="bg-white p-4 rounded-lg shadow-lg flex items-center hover:shadow-xl transition-shadow duration-300">
           <FaMapMarkerAltRegular className="text-xl md:text-2xl text-gray-800 mr-4" />
           <p className="text-sm md:text-base font-bold text-gray-700">Saiba onde estamos. Confira nosso endereço e horários.</p>
         </a>
@@ -66,7 +66,7 @@ const Sobre = () => {
           <p className="text-sm text-gray-600">com um propósito: Salvar vidas!</p>
           <ul className="mt-4 space-y-4">
             <li className="cursor-pointer text-sm md:text-base flex items-center hover:text-blue-500 transition-colors duration-300">
-              <a href="/" className="flex items-center space-x-2">
+              <a href="/voluntarios" className="flex items-center space-x-2">
                 <FaHandsHelping className="text-xl md:text-2xl mr-2" /> 
                 <span>Voluntários</span>
               </a>
@@ -78,7 +78,7 @@ const Sobre = () => {
               </a>
             </li>
             <li className="cursor-pointer text-sm md:text-base flex items-center hover:text-blue-500 transition-colors duration-300">
-              <a href="/" className="flex items-center space-x-2">
+              <a href="/nossa-sede" className="flex items-center space-x-2">
                 <FaCompassRegular className="text-xl md:text-2xl mr-2" /> 
                 <span>Nossa Sede</span>
               </a>
