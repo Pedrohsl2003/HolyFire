@@ -74,7 +74,7 @@ const Header: React.FC = () => {
               { label: 'Nossa Sede', href: '/nossa-sede' }, 
             ]}
           />
-          <NavLink href="/agenda" label="Agenda" />
+          <NavLink to="/agenda" label="Agenda" />
           <NavItem
             label="Conteúdo"
             isMenuOpen={isContentMenuOpen}
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
               { label: 'Especiais', href: '/content/especiais' },
             ]}
           />
-          <NavLink href="/contribua" label="Contribua" />
+          <NavLink to="/contribua" label="Contribua" />
           <NavItem
             label="Contato"
             isMenuOpen={isContactMenuOpen}
@@ -119,6 +119,7 @@ const Header: React.FC = () => {
           setIsContentMenuOpen={setIsContentMenuOpen}
           isContactMenuOpen={isContactMenuOpen}
           setIsContactMenuOpen={setIsContactMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}   
         />
       )}
     </header>
@@ -145,24 +146,24 @@ const NavItem: React.FC<{
     {isMenuOpen && (
       <div className={`absolute mt-2 w-48 bg-black ${dropdownClass}`}>
         {links.map(link => (
-          <a
-            href={link.href}
+          <Link
+            to={link.href}
             key={link.label}
             className="block px-4 py-2 text-white border-b border-gray-700 hover:bg-orange-400 transition duration-300"
           >
             {link.label}
-          </a>
+          </Link>
         ))}
       </div>
     )}
   </div>
 );
 
-const NavLink: React.FC<{ href: string, label: string }> = ({ href, label }) => (
-  <a href={href} className="relative group text-white hover:text-orange-400 transition duration-300">
+const NavLink: React.FC<{ to: string, label: string }> = ({ to, label }) => (
+  <Link to={to} className="relative group text-white hover:text-orange-400 transition duration-300">
     {label}
     <span className="absolute left-0 bottom-0 w-full h-0.5 bg-orange-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300"></span>
-  </a>
+  </Link>
 );
 
 const MobileMenu: React.FC<{
@@ -172,13 +173,15 @@ const MobileMenu: React.FC<{
   setIsContentMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isContactMenuOpen: boolean;
   setIsContactMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }> = ({
   isAboutMenuOpen,
   setIsAboutMenuOpen,
   isContentMenuOpen,
   setIsContentMenuOpen,
   isContactMenuOpen,
-  setIsContactMenuOpen
+  setIsContactMenuOpen,
+  setIsMobileMenuOpen
 }) => (
   <div className="md:hidden bg-black">
     <MobileMenuItem
@@ -191,8 +194,9 @@ const MobileMenu: React.FC<{
         { label: 'Células', href: '/celulas' },
         { label: 'Nossa Sede', href: '/nossa-sede' }, 
       ]}
+      setIsMobileMenuOpen={setIsMobileMenuOpen}
     />
-    <MobileNavLink href="/agenda" label="Agenda" />
+    <MobileNavLink to="/agenda" label="Agenda" setIsMobileMenuOpen={setIsMobileMenuOpen} />
     <MobileMenuItem
       label="Conteúdo"
       isOpen={isContentMenuOpen}
@@ -203,8 +207,9 @@ const MobileMenu: React.FC<{
         { label: 'Treinamentos', href: '/content/treinamentos' },
         { label: 'Especiais', href: '/content/especiais' },
       ]}
+      setIsMobileMenuOpen={setIsMobileMenuOpen}
     />
-    <MobileNavLink href="/contribua" label="Contribua" />
+    <MobileNavLink to="/contribua" label="Contribua" setIsMobileMenuOpen={setIsMobileMenuOpen} />
     <MobileMenuItem
       label="Contato"
       isOpen={isContactMenuOpen}
@@ -213,7 +218,20 @@ const MobileMenu: React.FC<{
         { label: 'Fale Conosco', href: '/fale-conosco' },
         { label: 'Voluntários', href: '/voluntarios' },
       ]}
+      setIsMobileMenuOpen={setIsMobileMenuOpen}
     />
+  </div>
+);
+
+const MobileNavLink: React.FC<{ to: string, label: string, setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>> }> = ({ to, label, setIsMobileMenuOpen }) => (
+  <div className="border-t border-gray-700">
+    <Link
+      to={to}
+      className="block px-4 py-2 text-white hover:bg-orange-400 transition duration-300"
+      onClick={() => setIsMobileMenuOpen(false)} 
+    >
+      {label}
+    </Link>
   </div>
 );
 
@@ -222,7 +240,8 @@ const MobileMenuItem: React.FC<{
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   links: { label: string, href: string }[];
-}> = ({ label, isOpen, setIsOpen, links }) => (
+  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ label, isOpen, setIsOpen, links, setIsMobileMenuOpen }) => (
   <div className="relative border-t border-gray-700">
     <button
       onClick={() => setIsOpen(!isOpen)}
@@ -234,22 +253,17 @@ const MobileMenuItem: React.FC<{
     {isOpen && (
       <div className="bg-black">
         {links.map(link => (
-          <a
-            href={link.href}
+          <Link
+            to={link.href}
             key={link.label}
             className="block px-4 py-2 text-white border-b border-gray-700 hover:bg-orange-400 transition duration-300"
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
       </div>
     )}
-  </div>
-);
-
-const MobileNavLink: React.FC<{ href: string, label: string }> = ({ href, label }) => (
-  <div className="border-t border-gray-700">
-    <a href={href} className="block px-4 py-2 text-white hover:bg-orange-400 transition duration-300">{label}</a>
   </div>
 );
 

@@ -20,19 +20,19 @@ import FaleConosco from './routes/Contato/FaleConoso.tsx';
 const router = (
   <Router>
     <Routes>
-      <Route path="/HolyFire/" element={<Layout><App /></Layout>} />
-      <Route path="/HolyFire/evento/:id" element={<Layout><EventDetail /></Layout>} />
-      <Route path="/HolyFire/equipe" element={<Layout><Equipe /></Layout>} />
-      <Route path="/HolyFire/content/:type" element={<Layout><ContentPage /></Layout>} />
-      <Route path="/HolyFire/content/:type/:id" element={<Layout><ContentDetalhes /></Layout>} />
-      <Route path="/HolyFire/quem-somos" element={<Layout><QuemSomos /></Layout>} />
-      <Route path="/HolyFire/nossa-equipe" element={<Layout><NossaEquipe /></Layout>} />
-      <Route path="/HolyFire/celulas" element={<Layout><Celulas /></Layout>} />
-      <Route path="/HolyFire/agenda" element={<Layout><Agenda /></Layout>} />
-      <Route path="/HolyFire/contribua" element={<Layout><Contribua /></Layout>} />
-      <Route path="/HolyFire/nossa-sede" element={<Layout><NossaSede /></Layout>} />
-      <Route path="/HolyFire/voluntarios" element={<Layout><Voluntarios /></Layout>} />
-      <Route path="/HolyFire/fale-conosco" element={<Layout><FaleConosco /></Layout>} />
+      <Route path="/" element={<Layout><App /></Layout>} />
+      <Route path="/evento/:id" element={<Layout><EventDetail /></Layout>} />
+      <Route path="/equipe" element={<Layout><Equipe /></Layout>} />
+      <Route path="/content/:type" element={<Layout><ContentPage /></Layout>} />
+      <Route path="/content/:type/:id" element={<Layout><ContentDetalhes /></Layout>} />
+      <Route path="/quem-somos" element={<Layout><QuemSomos /></Layout>} />
+      <Route path="/nossa-equipe" element={<Layout><NossaEquipe /></Layout>} />
+      <Route path="/celulas" element={<Layout><Celulas /></Layout>} />
+      <Route path="/agenda" element={<Layout><Agenda /></Layout>} />
+      <Route path="/contribua" element={<Layout><Contribua /></Layout>} />
+      <Route path="/nossa-sede" element={<Layout><NossaSede /></Layout>} />
+      <Route path="/voluntarios" element={<Layout><Voluntarios /></Layout>} />
+      <Route path="/fale-conosco" element={<Layout><FaleConosco /></Layout>} />
     </Routes>
   </Router>
 );

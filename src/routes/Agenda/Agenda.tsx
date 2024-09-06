@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { semanal } from "../../data";
 import Eventos from "../../components/Eventos";
 
 const Agenda: React.FC = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-12">
       <h1 className="text-4xl font-bold mb-8 text-center">AGENDA</h1>
