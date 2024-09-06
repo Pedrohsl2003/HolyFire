@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import EventDetail from './routes/Eventos/EventDetail.tsx';
 import Equipe from './routes/Sobre/NossaEquipe.tsx';
@@ -13,67 +13,32 @@ import Agenda from './routes/Agenda/Agenda.tsx';
 import Contribua from './routes/Contribua/Contribua.tsx';
 import NossaSede from './routes/NossaSede/NossaSede.tsx';
 import Voluntarios from './routes/Contato/Volunatios.tsx';
-import App from './App.tsx'
+import App from './App.tsx';
 import './styles/global.css';
 import FaleConosco from './routes/Contato/FaleConoso.tsx';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout><App /></Layout>,
-  },
-  {
-    path: '/evento/:id',
-    element: <Layout><EventDetail /></Layout>,
-  },
-  {
-    path: '/Equipe',
-    element: <Layout><Equipe /></Layout>,
-  },
-  {
-    path: '/content/:type',
-    element: <Layout><ContentPage /></Layout>,
-  },
-  {
-    path: '/content/:type/:id',
-    element: <Layout><ContentDetalhes /></Layout>,
-  },
-  {
-    path: '/quem-somos',
-    element: <Layout><QuemSomos /></Layout>,
-  },
-  {
-    path: '/nossa-equipe',
-    element: <Layout><NossaEquipe /></Layout>,
-  },
-  {
-    path: '/celulas',
-    element: <Layout><Celulas /></Layout>,
-  },
-  {
-    path: '/agenda',
-    element: <Layout><Agenda /></Layout>,
-  },
-  {
-    path: '/contribua',
-    element: <Layout><Contribua /></Layout>,
-  },
-  {
-    path: '/nossa-sede',
-    element: <Layout><NossaSede /></Layout>,
-  },
-  {
-    path: '/voluntarios',
-    element: <Layout><Voluntarios /></Layout>,
-  },
-  {
-    path: '/fale-conosco',
-    element: <Layout><FaleConosco /></Layout>
-  }
-]);
+const router = (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Layout><App /></Layout>} />
+      <Route path="/evento/:id" element={<Layout><EventDetail /></Layout>} />
+      <Route path="/equipe" element={<Layout><Equipe /></Layout>} />
+      <Route path="/content/:type" element={<Layout><ContentPage /></Layout>} />
+      <Route path="/content/:type/:id" element={<Layout><ContentDetalhes /></Layout>} />
+      <Route path="/quem-somos" element={<Layout><QuemSomos /></Layout>} />
+      <Route path="/nossa-equipe" element={<Layout><NossaEquipe /></Layout>} />
+      <Route path="/celulas" element={<Layout><Celulas /></Layout>} />
+      <Route path="/agenda" element={<Layout><Agenda /></Layout>} />
+      <Route path="/contribua" element={<Layout><Contribua /></Layout>} />
+      <Route path="/nossa-sede" element={<Layout><NossaSede /></Layout>} />
+      <Route path="/voluntarios" element={<Layout><Voluntarios /></Layout>} />
+      <Route path="/fale-conosco" element={<Layout><FaleConosco /></Layout>} />
+    </Routes>
+  </Router>
+);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+    {router}
+  </React.StrictMode>
 );

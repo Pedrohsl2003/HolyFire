@@ -1,4 +1,5 @@
 import React from 'react';
+import HomeVideo from '../assets/videohome.mp4'
 
 const Home: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Home: React.FC = () => {
           disablePictureInPicture
           className="absolute w-full h-full"
         >
-          <source src="/src/assets/videohome.mp4" type="video/mp4" />
+          <source src={HomeVideo} type="video/mp4" />
           Seu navegador não suporta o elemento de vídeo.
         </video>
       </div>

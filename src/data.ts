@@ -1,3 +1,7 @@
+import CongressoOnFire from './assets/CongressoOnFire.jpeg'
+import ImersaoDeCasais from './assets/ImersaoCasais.jpeg'
+import CultoDeHomens from './assets/CultoDeHomens.jpeg'
+
 export interface ItemConteudo {
   id: string;
   imagemCard: string; 
@@ -13,8 +17,8 @@ export interface ItemConteudo {
 export const eventos: ItemConteudo[] = [
   {
     id: '1',
-    imagemCard: '../src/assets/CongressoOnFire.jpeg',
-    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    imagemCard: CongressoOnFire,
+    imagemBanner: CongressoOnFire,
     tema: 'Congresso OnFire',
     resumo: 'Resumo do Congresso OnFire',
     local: 'Local do Congresso OnFire',
@@ -24,8 +28,8 @@ export const eventos: ItemConteudo[] = [
   },
   {
     id: '2',
-    imagemCard: '../src/assets/ImersaoCasais.jpeg',
-    imagemBanner: '../src/assets/ImersaoCasais.jpeg',
+    imagemCard: ImersaoDeCasais,
+    imagemBanner: ImersaoDeCasais,
     tema: 'Imersão De Casais',
     resumo: 'Resumo da Imersão De Casais',
     local: 'Local da Imersão De Casais',
@@ -35,8 +39,8 @@ export const eventos: ItemConteudo[] = [
   },
   {
     id: '3',
-    imagemCard: '../src/assets/CultoDeHomens.jpeg',
-    imagemBanner: '../src/assets/CultoDeHomens.jpeg',
+    imagemCard: CultoDeHomens,
+    imagemBanner: CultoDeHomens,
     tema: 'Culto De Homens',
     resumo: 'Resumo do Culto De Homens',
     local: 'Local do Culto De Homens',
@@ -50,8 +54,8 @@ export const eventos: ItemConteudo[] = [
 export const cultos: ItemConteudo[] = [
   {
     id: '1',
-    imagemCard: '../src/assets/CongressoOnFire.jpeg',
-    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    imagemCard: CongressoOnFire,
+    imagemBanner: CongressoOnFire,
     tema: 'Culto de Exemplo 1',
     resumo: 'Resumo do Culto de Exemplo 1',
     local: 'Local do Culto de Exemplo 1',
@@ -65,8 +69,8 @@ export const cultos: ItemConteudo[] = [
 export const series: ItemConteudo[] = [
   {
     id: '1',
-    imagemCard: '../src/assets/CongressoOnFire.jpeg',
-    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    imagemCard: CongressoOnFire,
+    imagemBanner: CongressoOnFire,
     tema: 'Série de Exemplo 1',
     resumo: 'Resumo da Série de Exemplo 1',
     local: 'Local da Série de Exemplo 1',
@@ -80,8 +84,8 @@ export const series: ItemConteudo[] = [
 export const treinamentos: ItemConteudo[] = [
   {
     id: '1',
-    imagemCard: '../src/assets/CongressoOnFire.jpeg',
-    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    imagemCard: CongressoOnFire,
+    imagemBanner: CongressoOnFire,
     tema: 'Treinamento de Exemplo 1',
     resumo: 'Resumo do Treinamento de Exemplo 1',
     local: 'Local do Treinamento de Exemplo 1',
@@ -95,8 +99,8 @@ export const treinamentos: ItemConteudo[] = [
 export const especiais: ItemConteudo[] = [
   {
     id: '1',
-    imagemCard: '../src/assets/CongressoOnFire.jpeg',
-    imagemBanner: '../src/assets/CongressoOnFire.jpeg',
+    imagemCard: CongressoOnFire,
+    imagemBanner: CongressoOnFire,
     tema: 'Especial de Exemplo 1',
     resumo: 'Resumo do Especial de Exemplo 1',
     local: 'Local do Especial de Exemplo 1',
