@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { cultos, series, treinamentos, especiais, ItemConteudo } from '../../data';
 
@@ -39,8 +39,12 @@ const ContentPage: React.FC = () => {
     filterContent();
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col items-center py-10">
+    <div className="min-h-screen flex flex-col items-center pt-8">
       <h1 className="text-5xl font-bold text-gray-800 mb-10 capitalize">{type}</h1>
 
       {/* Campos de Pesquisa */}

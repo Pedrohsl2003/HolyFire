@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineDesktop } from "react-icons/ai"; 
 import ImagemIgreja from '../../assets/CongressoOnFire.jpeg';
 
 const NossaSede: React.FC = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="w-full pb-8">
       {/* Banner */}

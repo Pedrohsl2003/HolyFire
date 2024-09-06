@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const FaleConosco: React.FC = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <section className="py-16">
-      <div className="max-w-6xl mx-auto px-8 lg:px-12">
+    <section className="py-12">
+      <div className="bg-white p-12 shadow-lg rounded-lg max-w-6xl mx-auto px-8 lg:px-12">
         <h2 className="text-5xl font-extrabold text-center text-gray-900 mb-4">
           Contato
         </h2>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import voluntario from '../../assets/voluntario.jpg';
 
 const Voluntarios: React.FC = () => {
@@ -24,13 +24,17 @@ const Voluntarios: React.FC = () => {
     console.log(formData);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="w-full pb-8">
+    <div>
       {/* Banner */}
       <div className="relative w-full h-96 bg-cover bg-center" style={{ backgroundImage: `url(${voluntario})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white text-5xl font-bold">Seja um voluntário</h1>
+          <h1 className="text-white text-5xl text-center font-bold">Seja um voluntário</h1>
         </div>
       </div>
 

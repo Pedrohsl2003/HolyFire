@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import IconMDA from "../../assets/IconMDA.png";
 import CongressoOnFire from "../../assets/CongressoOnFire.jpeg";
 
@@ -30,6 +30,10 @@ const MDAComponent: React.FC = () => {
     // Aqui você pode adicionar a lógica para enviar o formulário
     console.log("Form data submitted: ", formData);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

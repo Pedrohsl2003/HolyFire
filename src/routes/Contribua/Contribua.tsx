@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { MdPix } from "react-icons/md";
 import { RiBankFill } from "react-icons/ri";
 import { FaEnvelope } from "react-icons/fa";
@@ -6,6 +7,11 @@ import PayPal from '../../assets/Paypal.png';
 import Banner from '../../assets/Contribuicao.jpg';  
 
 const Contribua = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="w-full">
       <div className="relative w-full h-96">
@@ -15,12 +21,12 @@ const Contribua = () => {
         </div>
       </div>
       
-      <div className="max-w-6xl mx-auto p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-white shadow-lg rounded-lg p-8 space-y-6">
+      <div className="max-w-6xl mx-auto p-8 my-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="bg-white shadow-lg rounded-lg p-8 space-y-8">
             <div className="flex items-center">
               <MdPix className="w-10 h-10 text-cyan-600 mr-3" />
-              <h3 className="text-2xl font-semibold text-gray-800">PIX e PayPal</h3>
+              <h3 className="text-2xl font-semibold text-gray-800">Pix e PayPal</h3>
             </div>
             <p className="text-gray-600">
               Contribua através de PIX utilizando a chave:<br />
@@ -30,12 +36,12 @@ const Contribua = () => {
               Ou escaneie o QR code abaixo a partir do aplicativo do seu banco ou carteira digital.
             </p>
             <div className="flex justify-center">
-              <img src={QRCode} alt="QR Code Pix" className="w-32 h-auto mb-4" />
+              <img src={QRCode} alt="QR Code Pix" className="w-32 h-auto mb-8" />
             </div>
-            <div className="border-t border-gray-200 pt-6">
-              <p className="text-gray-600 text-center mb-4">Também aceitamos doações via PayPal:</p>
+            <div className="border-t border-gray-200 pt-8">
+              <p className="text-gray-600 text-center mb-8">Também aceitamos doações via PayPal:</p>
               <div className="flex justify-center">
-                <img src={PayPal} alt="PayPal" className="w-24 h-auto mb-4"/>
+                <img src={PayPal} alt="PayPal" className="w-24 h-auto mb-8"/>
               </div>
               <form action="https://www.paypal.com/donate" method="post" target="_top" className="flex justify-center">
                 <input type="hidden" name="business" value="ZCXT6XPAMR7EW" />
@@ -52,9 +58,9 @@ const Contribua = () => {
             </div>
           </div>
           
-          <div className="flex flex-col space-y-8">
-            <div className="bg-white shadow-lg rounded-lg p-8">
-              <div className="flex items-center mb-6">
+          <div className="flex flex-col space-y-16">
+            <div className="bg-white shadow-lg rounded-lg p-12">
+              <div className="flex items-center mb-8">
                 <RiBankFill className="w-10 h-10 text-blue-600 mr-3" />
                 <h3 className="text-2xl font-semibold text-gray-800">Depósito Bancário</h3>
               </div>
@@ -66,8 +72,8 @@ const Contribua = () => {
               </p>
             </div>
             
-            <div className="bg-white shadow-lg rounded-lg p-8">
-              <div className="flex items-center mb-6">
+            <div className="bg-white shadow-lg rounded-lg p-12">
+              <div className="flex items-center mb-8">
                 <FaEnvelope className="w-10 h-10 text-yellow-600 mr-3" />
                 <h3 className="text-2xl font-semibold text-gray-800">Envelope</h3>
               </div>
@@ -79,7 +85,7 @@ const Contribua = () => {
         </div>
       </div>
       
-      <div className="w-full bg-blue-700 text-white p-12 mt-12">
+      <div className="w-full bg-blue-700 text-white p-12">
         <h2 className="text-3xl font-bold text-center mb-8">Por que contribuímos?</h2>
         <p className="text-center max-w-4xl mx-auto text-lg leading-relaxed">
           Provérbios 21:26 diz que “o justo ama dar”.<br /><br />

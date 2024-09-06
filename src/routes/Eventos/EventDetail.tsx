@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { eventos, ItemConteudo } from '../../data';
-import Header from '../../components/Header';
 
 const EventDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const evento = eventos.find((e: ItemConteudo) => e.id === id);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!evento) return <div>Evento não encontrado</div>;
 
   return (
-    <div className="min-h-screen pb-2">
-      <Header />
-
+    <div className="min-h-screen">
       <div className="relative w-full h-96">
         <img
           src={evento.imagemBanner}
@@ -29,14 +30,14 @@ const EventDetail: React.FC = () => {
         <div className="bg-white p-8 sm:rounded-lg shadow-lg max-w-5xl w-full">
           <h2 className="text-3xl font-semibold mb-4">Sobre o Evento</h2>
           <p className="mb-6 text-lg text-gray-700">{evento.resumo}</p>
-          
+
           {evento.local && (
             <>
               <h3 className="text-2xl font-semibold mb-4">Local</h3>
               <p className="mb-6 text-lg text-gray-700">{evento.local}</p>
             </>
           )}
-          
+
           {evento.horario && (
             <>
               <h3 className="text-2xl font-semibold mb-4">Horário</h3>

@@ -107,13 +107,14 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="mt-8 text-center text-gray-500">
-        © {new Date().getFullYear()} Holyfire. Todos os direitos reservados.
+        <span className="block sm:inline">© {new Date().getFullYear()} Holyfire.</span>
+        <span className="block sm:inline"> Todos os direitos reservados.</span>
       </div>
       {/* Botão Voltar ao Topo */}
       {showScrollToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-orange-400 text-white p-3 rounded-full shadow-lg hover:bg-orange-500 transition duration-300"
+          className="fixed bottom-4 right-4 md:bottom-8 md:right-8  bg-orange-400 text-white p-3 rounded-full shadow-lg hover:bg-orange-500 transition duration-300"
           aria-label="Voltar ao Topo"
         >
           <FaArrowUp size={24} />
